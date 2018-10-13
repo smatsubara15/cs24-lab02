@@ -17,7 +17,7 @@ public:
     void setLength(double);         // mutator for length
 
     // DECLARE (const) METHOD TO RETURN AREA OF RECTANGLE
-    void area() const;
+    double area() const;
 
 private:
     double width, length;
