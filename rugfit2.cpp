@@ -4,35 +4,35 @@
 #include <iostream>
 using namespace std;
 
-// definition of class Rectangle                                                
-// (usually would be in a separate file named rectangle.h)                      
+// definition of class Rectangle
+// (usually would be in a separate file named rectangle.h)
 class Rectangle {
 
 public:
-    // declare constructor and get/set methods (already done)                   
-    Rectangle(double w, double l);  // constructor                              
-    double getWidth() const;        // accessor for width                       
-    double getLength() const;       // accessor for length                      
-    void setWidth(double);          // mutator for width                        
-    void setLength(double);         // mutator for length                       
-    double area() const;
+    // declare constructor and get/set methods (already done)
+    Rectangle(double w, double l);  // constructor
+    double getWidth() const;        // accessor for width
+    double getLength() const;       // accessor for length
+    void setWidth(double);          // mutator for width
+    void setLength(double);         // mutator for length
 
-    // DECLARE (const) METHOD TO RETURN AREA OF RECTANGLE                       
+    // DECLARE (const) METHOD TO RETURN AREA OF RECTANGLE
+    void area() const;
 
 private:
     double width, length;
 
-}; // end of class definition                                                   
+}; // end of class definition
 
-// implementation of class Rectangle here to main function                      
-// (usually would be in a separate file named rectangle.cpp,                    
-// and this separate file would #include "rectangle.h")                         
+// implementation of class Rectangle here to main function
+// (usually would be in a separate file named rectangle.cpp,
+// and this separate file would #include "rectangle.h")
 
-// implement constructor                                                        
+// implement constructor
 Rectangle::Rectangle(double w, double l) : width(w), length(l) {
-} // no constructor body: uses initialization list                              
+} // no constructor body: uses initialization list
 
-// implement accessors and mutators for width and length                        
+// implement accessors and mutators for width and length
 double Rectangle::getWidth() const {
     return width;
 }
@@ -44,36 +44,41 @@ void Rectangle::setWidth(double w) {
 }
 void Rectangle::setLength(double l) {
     length = l;
-// IMPLEMENT THE AREA METHOD HERE                                               
-double Rectangle::area() const{
-  return width*length;
 }
 
-// change main where instructed in UPPER CASE below                             
-// (usually would #include "rectangle.h" before main)                           
+// IMPLEMENT THE AREA METHOD HERE
+double Rectangle::area() const
+{
+    return length*width;
+}
+
+
+
+// change main where instructed in UPPER CASE below
+// (usually would #include "rectangle.h" before main)
 int main() {
-
+    
     double width, length;
-    Rectangle rug(0,0); //will be updated below                                 
+    Rectangle rug(0,0); // will be updated below
 
-    // create Rectangle named "floor" for sizes input by user                   
+    // create Rectangle named "floor" for sizes input by user
     cout << "enter width and length of floor: ";
     cin >> width >> length;
-    Rectangle floor(width, length); // note: const object                       
+    const Rectangle floor(width, length); // note: const object
 
-    // RESET Rectangle NAMED "rug" FOR SIZES INPUT BY USER                      
-    cout << "enter width and length of rug:";
-    cin>> width >> length;
-    rug.getWidth();
+    // RESET Rectangle NAMED "rug" FOR SIZES INPUT BY USER
+    cout<<"enter width and length of rug:";
+    cin>>width>>length;
     rug.getLength();
-    rug.setWidth(width);
     rug.setLength(length);
+    rug.getWidth();
+    rug.setWidth(width);
+    
+    
+    // DO NOT CHANGE ANYTHING BELOW (if you do, you will earn 0 points,
+    // no matter what submit.cs says is your "tentative" score)
 
-
-    // DO NOT CHANGE ANYTHING BELOW (if you do, you will earn 0 points,         
-    // no matter what submit.cs says is your "tentative" score)                 
-
-    // print results                                                            
+    // print results
     cout << "floor area: " << floor.area() << endl;
     cout << "rug area: " << rug.area() << endl;
     double leftover = rug.area() - floor.area();
@@ -84,5 +89,4 @@ int main() {
 
     return 0;
 }
-
 
