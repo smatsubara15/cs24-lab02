@@ -58,14 +58,20 @@ int main() {
     // create Rectangle named "floor" for sizes input by user                   
     cout << "enter width and length of floor: ";
     cin >> width >> length;
-    const Rectangle floor(width, length); // note: const object                 
+    Rectangle floor(width, length); // note: const object                       
+    floor.getWidth();
+    floor.getLength();
+    floor.setWidth(width);
+    floor.setWidth(length);
+
     // RESET Rectangle NAMED "rug" FOR SIZES INPUT BY USER                      
     cout << "enter width and length of rug: ";
     cin>> width >> length;
-    const Rectangle rug(width, length);
-    //rug.getWidth();                                                           
-    //rug.getLength();                                                          
-
+    Rectangle rug(width, length);
+    rug.getWidth();
+    rug.getLength();
+    rug.setWidth(width);
+    rug.setLength(length);
 
     // DO NOT CHANGE ANYTHING BELOW (if you do, you will earn 0 points,         
     // no matter what submit.cs says is your "tentative" score)                 
